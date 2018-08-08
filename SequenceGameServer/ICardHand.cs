@@ -4,8 +4,9 @@ using System.Text;
 
 namespace SequenceGameServer
 {
-    public interface IMoveValidator
+    public interface ICardHand
     {
-        bool IsValidMove(IGameBoardSpace gameBoardSpace, IGamePiece piece);
+        void AddCard(ICard card);
+        ICard GetCard(int position);
     }
 }

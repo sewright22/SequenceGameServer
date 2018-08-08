@@ -51,8 +51,9 @@ namespace SequenceGameUnitTests
             mockRandomNumberGenerator.Setup(x => x.Generate(1));
             var deck = new Deck(mockRandomNumberGenerator.Object);
             deck.AddCard(Mock.Of<ICard>());
+            deck.AddCard(Mock.Of<ICard>());
             deck.Shuffle();
-            mockRandomNumberGenerator.Verify(x => x.Generate(deck.CardsRemaining), Times.Once);
+            mockRandomNumberGenerator.Verify(x => x.Generate(2), Times.Exactly(2));
         }
     }
 }

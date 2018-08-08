@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace SequenceGameServer
@@ -20,12 +21,12 @@ namespace SequenceGameServer
         {
             _cards.Push(card);
         }
-
+		
         public ICard Draw()
         {
             return _cards.Pop();
         }
-
+		
         public void Shuffle()
         {
             var cardList = _cards.ToArray();

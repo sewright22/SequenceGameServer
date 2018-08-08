@@ -11,7 +11,7 @@ namespace SequenceGameUnitTests
     public class CardTests
     {
         [Theory, AutoMoqData]
-        public void CardCreationTest([Frozen] Mock<ICardSuit> mockCardSuit, Mock<ICardValue> mockCardValue)
+        public void CardCreationTest(Mock<ICardSuit> mockCardSuit, Mock<ICardValue> mockCardValue)
         {
             var card = new Card(mockCardSuit.Object, mockCardValue.Object);
             Assert.Equal(mockCardSuit.Object, card.Suit);
